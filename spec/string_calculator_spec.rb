@@ -31,6 +31,13 @@ describe StringCalculator do
                     expect(result).to eq(10)
                 end
             end
+
+            context "accepting different delimiter" do
+                result = sc.add("//:\n 1: 2: 3")
+                it "returns sum of all numbers" do
+                    expect(result).to eq(6)
+                end
+            end
         end
     end
 end

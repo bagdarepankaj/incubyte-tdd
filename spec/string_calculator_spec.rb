@@ -38,6 +38,15 @@ describe StringCalculator do
                     expect(result).to eq(6)
                 end
             end
+
+            context "when numbers contained are negative" do
+                result = sc.add("//:\n 1: 2: 3: -4:-5")
+                it "returns sum of all numbers" do
+                    expect do
+                        raise StandardError, "negative numbers not allowed [-4, -5]"
+                    end.to raise_error(StandardError) { |error| expect(error.message).to eq "negative numbers not allowed [-4, -5]" }
+                end
+            end
         end
     end
 end

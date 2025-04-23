@@ -17,6 +17,13 @@ describe StringCalculator do
                     expect(result).to eq(3)
                 end
             end
+
+            context "having multiple numbers seperated by commas" do
+                result = sc.add("1, 2, 3, 4, 5")
+                it "returns sum of all numbers" do
+                    expect(result).to eq(15)
+                end
+            end
         end
     end
 end

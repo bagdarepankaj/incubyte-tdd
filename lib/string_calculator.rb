@@ -3,6 +3,6 @@ class StringCalculator
     def add(str = "")
         return 0 if str.empty?
 
-        str.to_i
+        str.split(",").sum { |a| a.to_i }
     end
 end

@@ -24,6 +24,13 @@ describe StringCalculator do
                     expect(result).to eq(15)
                 end
             end
+
+            context "accepting new line character between numbers" do
+                result = sc.add("1, 2\n3, 4")
+                it "returns sum of all numbers" do
+                    expect(result).to eq(10)
+                end
+            end
         end
     end
 end
